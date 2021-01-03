@@ -208,9 +208,7 @@ app.get('*',(req,res)=>{
         title:'404',
         name:'Ahmad Shadab',
         errorMessage:'page not found'})
-})
-
-
+});
 app.listen(3000,()=>{
     console.log('server running on 3000');// this does not show to any browser
 });
