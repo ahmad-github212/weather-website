@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Weather App</title>
+    <link rel="icon" href="/img/logo.png">
+    <link rel='stylesheet' href="/css/styles.css">
+   <!-- <script src='/js/app.js'></script> 
+   we will not include our script here to prevent error because including it here will it
+   here only although the objects below are  not loaded so if we are fetching the objects will cause error
+   due no objects are present till the script runs. so to prevent that we wil inlcude it at the botom-->
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}} <!-- this is the syntax to recieve the value from nodejs to hadlebars -->
+
+        <p>
+            Use this website to know the weather information.
+        </p>
+
+        <form>
+          <input placeholder="Location">
+          <button>Search</button>  
+        </form>
+
+        <p id= "message-1"></p>
+        <p id= "message-2"></p>
+    </div>
+    
+    
+    
+    {{>footer}}
+    
+    <script src='/js/app.js'></script>
+
+</body>
+
+</html>
