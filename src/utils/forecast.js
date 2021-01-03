@@ -18,8 +18,8 @@ const forecast = (latitude,longitude,callback)=>{
         }
         else{
             //callback(undefined, response.body.weather[0].description + '. ' + 'It is ' + response.body.main.temp + ' degrees out. There is ' + response.body.clouds.all + '% rain');
-            callback(undefined, response.body.currently.summary + '. ' + 'It is ' + response.body.currently.temperature + ' degrees out. There is ' + response.body.currently.precipProbability + '% rain');
-
+            callback(undefined, response.body.daily.data[0].summary + '. ' + 'It is ' + response.body.currently.temperature + ' degrees out. High today is ' + response.body.daily.data[0].temperatureHigh + ' with a low of ' + response.body.daily.data[0].temperatureLow +'. There is ' + response.body.currently.precipProbability + '% rain');
+            
         }
     });
 };
