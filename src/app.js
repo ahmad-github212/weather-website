@@ -8,6 +8,9 @@ const express = require('express'); // loading of the library in constant expres
 
 const app = express();
 
+const port = process.env.PORT || 3000 ; // port will get the value on which heroku will run project
+//or if we run it on our localhost port will get the value of 3000
+
 /*
 example app.com may be the domain name
 app.com/help, abpp.com/about other pages  where /help, /about are the routes where user want to travel
@@ -209,6 +212,11 @@ app.get('*',(req,res)=>{
         name:'Ahmad Shadab',
         errorMessage:'page not found'})
 });
-app.listen(3000,()=>{
-    console.log('server running on 3000');// this does not show to any browser
+
+/*
+for production deployement on heroku, heroku itself provides the port on which the server will
+listen so we will use that instead of using port 3000. for that we will be using
+*/
+app.listen(port,()=>{
+    console.log('server running on '+port);// this does not show to any browser
 });

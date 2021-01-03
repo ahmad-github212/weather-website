@@ -31,7 +31,13 @@ const location = search.value ;
 messageOne.textContent = "Loading...";
 messageTwo.textContent = "";
 
-    fetch('http://localhost:3000/weather?address='+location).then((response) => {
+    fetch('/weather?address='+location).then((response) => {
+
+    //'http://localhost:3000 this url will be used if we are running our app on local machine
+    //but if we want third party app to run this app then we will only give the root 
+    // of our fetching link not the hardcode localhost link thus the 'http://localhost:3000
+    // will change to /
+
         response.json().then((data) => {
             if (data.error) {
                 //console.log(data.error);
